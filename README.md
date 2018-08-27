@@ -49,7 +49,7 @@ or define the client directly in the code:
 ```php
 $client = new \iost\soapclient\Client([
     'url' => 'http://myservice.com/api/hello-wsdl',
-    'url' => 'http://myservice.com/api/hello'
+    'location' => 'http://myservice.com/api/hello'
 ]);
 ```
 
