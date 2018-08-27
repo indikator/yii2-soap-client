@@ -34,7 +34,8 @@ You need to setup soap client application component:
 'components' => [
     'siteApi' => [
         'class' => 'iost\soapclient\Client',
-        'url' => 'http://myservice.com/api/hello',
+        'url' => 'http://myservice.com/api/hello-wsdl',
+        'location' => 'http://myservice.com/api/hello',
         'options' => [
             'cache_wsdl' => WSDL_CACHE_NONE,
         ],
@@ -47,7 +48,8 @@ or define the client directly in the code:
 
 ```php
 $client = new \iost\soapclient\Client([
-    'url' => 'http://myservice.com/api/hello',
+    'url' => 'http://myservice.com/api/hello-wsdl',
+    'url' => 'http://myservice.com/api/hello'
 ]);
 ```
 
