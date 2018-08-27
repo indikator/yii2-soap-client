@@ -3,8 +3,8 @@ SOAP Client Extension for Yii 2
 
 Note, PHP SOAP extension is required.
 
-[![Latest Stable Version](https://poser.pugx.org/mongosoft/yii2-soap-client/v/stable.png)](https://packagist.org/packages/mongosoft/yii2-soap-client)
-[![Total Downloads](https://poser.pugx.org/mongosoft/yii2-soap-client/downloads.png)](https://packagist.org/packages/mongosoft/yii2-soap-client)
+[![Latest Stable Version](https://poser.pugx.org/indikator/yii2-soap-client/v/stable.png)](https://packagist.org/packages/indikator/yii2-soap-client)
+[![Total Downloads](https://poser.pugx.org/indikator/yii2-soap-client/downloads.png)](https://packagist.org/packages/indikator/yii2-soap-client)
 
 Installation
 ------------
@@ -14,13 +14,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-composer require --prefer-dist mongosoft/yii2-soap-client "*"
+composer require --prefer-dist indikator/yii2-soap-client "*"
 ```
 
 or add
 
 ```json
-"mongosoft/yii2-soap-client": "*"
+"indikator/yii2-soap-client": "*"
 ```
 
 to the `require` section of your `composer.json` file.
@@ -33,7 +33,7 @@ You need to setup soap client application component:
 ```php
 'components' => [
     'siteApi' => [
-        'class' => 'mongosoft\soapclient\Client',
+        'class' => 'indikator\soapclient\Client',
         'url' => 'http://myservice.com/api/hello',
         'options' => [
             'cache_wsdl' => WSDL_CACHE_NONE,
@@ -46,7 +46,7 @@ You need to setup soap client application component:
 or define the client directly in the code:
 
 ```php
-$client = new \mongosoft\soapclient\Client([
+$client = new \indikator\soapclient\Client([
     'url' => 'http://myservice.com/api/hello',
 ]);
 ```

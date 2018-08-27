@@ -1,6 +1,6 @@
 <?php
 
-namespace mongosoft\soapclient;
+namespace iost\soapclient;
 
 use SoapClient;
 use SoapFault;
@@ -13,6 +13,7 @@ use yii\base\InvalidConfigException;
  * Note, PHP SOAP extension is required.
  *
  * @author Alexander Mohorev <dev.mohorev@gmail.com>
+ * @author Mikhail Iost <mikhail.iost@gmail.com>
  */
 class Client extends Component
 {
@@ -20,6 +21,10 @@ class Client extends Component
      * @var string $url the URL of the WSDL file.
      */
     public $url;
+    /**
+     * @var string $location the URL end-point service.
+     */
+    public $location;
     /**
      * @var array the array of SOAP client options.
      */
@@ -42,6 +47,9 @@ class Client extends Component
         }
         try {
             $this->_client = new SoapClient($this->url, $this->options);
+            if (!empty($this->location)) {
+                $this->_client->__setLocation($this->location);
+            }
         } catch (SoapFault $e) {
             throw new Exception($e->getMessage(), (int) $e->getCode(), $e);
         }
